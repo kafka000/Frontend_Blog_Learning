@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+//  先导入 antd 样式文件 再导入全局样式文件，防止样式覆盖！
+import 'antd/dist/antd.min.css'
+import './index.scss';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

@@ -1,0 +1,36 @@
+// 整个登录页面的样式
+.login {
+    width: 100%; // 宽度设置为100%，占满整个父元素
+    height: 100%; // 高度设置为100%，占满整个父元素
+    position: absolute; // 使用绝对定位
+    left: 0; // 左边距设置为0
+    top: 0; // 顶部距设置为0
+    // 背景图片设置，居中显示并覆盖整个元素，使用url引入图片
+    background: center/cover url('~@/assets/login.png');
+    
+    // 登录logo的样式
+    .login-logo {
+      width: 200px; // logo宽度设置为200px
+      height: auto; // logo高度设置为60px      
+      display: inline-block; // 将logo设置为块级元素
+      margin: 0 auto 20px; // 将logo水平居中，并在下方添加20px的外边距
+    }
+    
+    // 登录表单容器的样式
+    .login-container {
+      width: 440px; // 容器宽度设置为440px
+      height: auto; // 容器高度设置为360px
+      position: absolute; // 使用绝对定位
+      left: 50%; // 左边距设置为父元素宽度的50%
+      top: 50%; // 顶部距设置为父元素高度的50%
+      // 使用CSS的transform属性进行坐标转换，实现居中效果
+      transform: translate(-50%, -50%);
+      // 添加阴影效果，增强立体感
+      box-shadow: 0 0 50px rgb(0 0 0 / 10%);
+    }
+    
+    // 登录表单中复选框标签的样式
+    .login-checkbox-label {
+      color: #1890ff; // 将复选框标签的文字颜色设置为主题蓝色
+    }
+  }

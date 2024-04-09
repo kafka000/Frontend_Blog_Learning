@@ -1,0 +1,46 @@
+/* 为.ant-layout类设置样式，使其高度占满容器 */
+.ant-layout {
+  height: 100%;
+}
+
+/* 设置.header类的内边距为0 */
+.header {
+  padding: 0;
+}
+
+/* 为.logo类设置样式，包括宽度、高度、背景图片、背景位置和大小 */
+.logo {
+  width: 200px; /* 设置宽度为200像素 */
+  height: 60px; /* 设置高度为60像素 */
+  background: url("~@/assets/dinner.png") no-repeat center / 160px auto; /* 设置背景图片，居中显示，不重复，宽度为160像素 */
+}
+
+/* 设置.layout-content类的overflow-y属性为auto，以便在内容溢出时显示滚动条 */
+.layout-content {
+  overflow-y: auto;
+}
+
+/* 为.user-info类设置样式，包括位置、内边距和颜色 */
+.user-info {
+  position: absolute; /* 设置绝对定位 */
+  right: 0; /* 距离容器右侧为0 */
+  top: 0; /* 距离容器顶部为0 */
+  padding-right: 20px; /* 右侧内边距为20像素 */
+  color: #fff; /* 文本颜色为白色 */
+
+  /* 为.user-name子类设置样式 */
+  .user-name {
+    margin-right: 20px; /* 右侧外边距为20像素 */
+  }
+
+  /* 为.user-logout子类设置样式，使其在鼠标悬停时呈现手形光标，表示可点击 */
+  .user-logout {
+    display: inline-block; /* 将元素显示为内联块级元素 */
+    cursor: pointer; /* 鼠标悬停时呈现手形光标 */
+  }
+}
+
+/* 为.ant-layout-header类设置内边距，并使用!important强制覆盖其他样式 */
+.ant-layout-header {
+  padding: 0 !important; /* 设置内边距为0，并确保这个样式优先级最高 */
+}
