@@ -8,10 +8,13 @@ import {
   DeploymentUnitOutlined,
 } from "@ant-design/icons";
 import "./index.scss";
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 const { Header, Sider } = Layout;
 
 const GeekLayout = () => {
+  const location = useLocation();
+  const selectKey = location.pathname;
   return (
     <Layout>
       <Header className="header">
@@ -31,33 +34,37 @@ const GeekLayout = () => {
             mode="inline"
             theme="dark"
             defaultSelectedKeys={["1"]}
+            selectedKeys={[selectKey]}
             style={{ height: "100%", borderRight: 0 }}
           >
             <Menu.Item icon={<HomeOutlined />} key="1">
-              自带-数据概览
+              <Link to="home">项目-数据概览</Link>
             </Menu.Item>
             <Menu.Item icon={<DiffOutlined />} key="2">
-              自带-内容管理
+              <Link to="article">项目-内容管理</Link>
             </Menu.Item>
             <Menu.Item icon={<EditOutlined />} key="3">
-              自带-发布文章
+              <Link to="publish"> 项目-发布文章</Link>
             </Menu.Item>
             <Menu.Item icon={<Html5Outlined />} key="4">
-              HTML CSS-仿写b站
+              <Link to="basic"> HTML CSS-基础</Link>
             </Menu.Item>
-            <Menu.Item icon={<DeploymentUnitOutlined />} key="5">
-              状态管理-mobx练习
+            <Menu.Item icon={<Html5Outlined />} key="5">
+              <Link to="bilibili"> HTML CSS-仿写b站</Link>
             </Menu.Item>
             <Menu.Item icon={<DeploymentUnitOutlined />} key="6">
-              状态管理-redux练习
+              状态管理-mobx练习
             </Menu.Item>
             <Menu.Item icon={<DeploymentUnitOutlined />} key="7">
+              状态管理-redux练习
+            </Menu.Item>
+            <Menu.Item icon={<DeploymentUnitOutlined />} key="8">
               状态管理-Zustand练习
             </Menu.Item>
           </Menu>
         </Sider>
         <Layout className="layout-content" style={{ padding: 20 }}>
-          内容
+          <Outlet />
         </Layout>
       </Layout>
     </Layout>
