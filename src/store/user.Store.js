@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx";
 import { http } from "@/utils";
-
+// 通过
 class UserStore {
     userInfo = {}
     constructor(){

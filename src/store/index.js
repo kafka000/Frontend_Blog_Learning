@@ -6,7 +6,7 @@ class RootStore {
   // 组合模块
   constructor() {
     this.loginStore = new LoginStore()
-    this.useStore = new UserStore()
+    this.userStore = new UserStore()
   }
 }
 

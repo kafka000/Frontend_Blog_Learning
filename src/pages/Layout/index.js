@@ -9,20 +9,46 @@ import {
 } from "@ant-design/icons";
 import "./index.scss";
 import { Link, Outlet, useLocation } from "react-router-dom";
+// 副作用
+import { useEffect } from "react";
+// mobx
+import { observer} from 'mobx-react-lite'
+// 获取用户数据
+import { useStore } from "@/store";
+// 导入useNavigate函数
+import { useNavigate } from 'react-router-dom'
+
 
 const { Header, Sider } = Layout;
 
 const GeekLayout = () => {
   const location = useLocation();
   const selectKey = location.pathname;
+  // 这里语法？
+  const {userStore,loginStore} = useStore()
+  // 利用Hooks副作用发请求
+  useEffect(()=>{
+    try {
+      userStore.getUserInfo()
+    } catch{ }
+  },[userStore])
+
+  // log out
+  const navigate= useNavigate()
+  const logout = () => {
+    loginStore.logOut()
+    navigate('/login')
+  }
+
   return (
     <Layout>
       <Header className="header">
         <div className="logo" />
         <div className="user-info">
-          <span className="user-name">user.name</span>
+          {/* 发请求获取用户名称数据渲染 直接可以指定key获取？*/}
+          <span className="user-name">{userStore.userInfo.name}</span>
           <span className="user-logout">
-            <Popconfirm title="是否确认退出？" okText="退出" cancelText="取消">
+            <Popconfirm title="是否确认退出？" okText="退出" cancelText="取消" onConfirm={logout}>
               <LogoutOutlined /> 退出
             </Popconfirm>
           </span>
@@ -71,4 +97,4 @@ const GeekLayout = () => {
   );
 };
 
-export default GeekLayout;
+export default observer(GeekLayout);

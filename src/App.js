@@ -15,16 +15,25 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/" element={<AuthRoute><Layout/></AuthRoute>}>
+          {/* 不能写死需要鉴权 */}
+          <Route
+            path="/"
+            element={
+              <AuthRoute>
+                <Layout />
+              </AuthRoute>
+            }
+          >
             {/* 二级页面 */}
-            <Route path="home" element={<Home/>}></Route>
-            <Route path="article" element={<Article/>}></Route> 
-            <Route path="publish" element={<Publish/>}></Route>
-            <Route path="bilibili" element={<Bilibili/>}></Route>
-            <Route path="basic" element={<Basic/>}></Route>                         
+            {/* home 默认页 */}
+            <Route index path="home" element={<Home />}></Route>
+            <Route path="article" element={<Article />}></Route>
+            <Route path="publish" element={<Publish />}></Route>
+            <Route path="bilibili" element={<Bilibili />}></Route>
+            <Route path="basic" element={<Basic />}></Route>
           </Route>
-          <Route path="/login" element={<Login/>} />
-        </Routes>        
+          <Route path="/login" element={<Login />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );

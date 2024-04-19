@@ -12,7 +12,8 @@
     .login-logo {
       width: 200px; // logo宽度设置为200px
       height: auto; // logo高度设置为60px      
-      display: inline-block; // 将logo设置为块级元素
+      display: flex; // 将logo设置为块级元素
+      align-items: center;
       margin: 0 auto 20px; // 将logo水平居中，并在下方添加20px的外边距
     }
     

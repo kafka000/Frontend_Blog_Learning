@@ -5,13 +5,12 @@ import logo from "@/assets/dinner.png";
 // 导入登录页面的样式文件
 import "./index.scss";
 import { useNavigate } from "react-router-dom";
-import { useStore } from "@/store";
-
+import { useStore} from "@/store";
 
 // 登录
 const Login = () => {
   const navigate = useNavigate()
-  const loginStore = useStore()
+  const {loginStore} = useStore()
   async function onFinish (values) {
     console.log(values)
     // values：放置的是所有表单项中用户输入的内容
@@ -30,7 +29,11 @@ const Login = () => {
         {/* 一个img标签，用于显示登录页面的logo */}
         <img className="login-logo" src={logo} alt="" />
         {/* 一个Form组件，用于包裹登录表单 */}
-        <Form  onFinish={ onFinish } validateTrigger={["onBlur", "onChange"]}>
+        <Form  onFinish={ onFinish } initialValues={{
+            remember: true,
+            mobile: '13811111111',
+            code: '246810'
+          }} validateTrigger={["onBlur", "onChange"]}>
           {/* 一个Form.Item组件，包含一个Input组件，用于输入手机号 */}
           <Form.Item
             name="mobile"
