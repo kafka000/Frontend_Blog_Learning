@@ -79,7 +79,7 @@ const GeekLayout = () => {
               <Link to="bilibili"> HTML CSS-仿写b站</Link>
             </Menu.Item>
             <Menu.Item icon={<DeploymentUnitOutlined />} key="6">
-              状态管理-mobx练习
+            <Link to="mobx"> 状态管理-mobx练习</Link>
             </Menu.Item>
             <Menu.Item icon={<DeploymentUnitOutlined />} key="7">
               状态管理-redux练习

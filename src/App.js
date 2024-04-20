@@ -9,6 +9,7 @@ import Publish from "./pages/Publish";
 import Home from "./pages/Home";
 import Bilibili from "./pages/Bilibili";
 import Basic from "./pages/Basic";
+import MobX from "./Mobx";
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
             <Route path="publish" element={<Publish />}></Route>
             <Route path="bilibili" element={<Bilibili />}></Route>
             <Route path="basic" element={<Basic />}></Route>
+            {/* 状态管理 */}
+            <Route path="mobx" element={<MobX />}></Route>
           </Route>
           <Route path="/login" element={<Login />} />
         </Routes>

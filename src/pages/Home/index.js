@@ -12,7 +12,7 @@ const Home = () => {
       <Bar
         style={{ width: '500px', height: '400px' }}
         xData={['vue', 'angular', 'react']}
-        sData={[50, 60, 70]}
+        sData={[40, 20, 70]}
         title='三大框架使用度' />
     </div>
   )
