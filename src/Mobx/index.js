@@ -2,16 +2,21 @@
 import mobxCounter from "./mobxCounter";
 // Mobx计数器案例步骤(基本使用)5-使用方导入observer方法（中间件）
 import { observer } from "mobx-react-lite";
-import { Button } from "antd";
+import { Button,Space } from "antd";
 const MobX = () => {
   return (
     <div className="mobx">
       {/* 点击方法 */}
       {/* Mobx计数器案例步骤(基本使用)7-调用方法*/}
       {/* 自动可观察 */}
-      <Button onClick={() => mobxCounter.addCount()} type="primary">
-        Mobx最简单的计数器案例:{mobxCounter.count}
-      </Button>
+      <Space>
+        <Button onClick={() => mobxCounter.addCount()} type="primary">
+            Mobx最简单的计数器案例:{mobxCounter.count}
+        </Button>      
+        <Button type="primary">
+            Mobx计数器案例-计算属性:{mobxCounter.doubleCount}
+        </Button>
+      </Space>      
     </div>
   );
 };

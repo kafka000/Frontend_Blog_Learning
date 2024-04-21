@@ -1,4 +1,4 @@
-import { makeAutoObservable } from 'mobx'
+import { makeAutoObservable,computed } from 'mobx'
 class MobXCounter{
     // Mobx计数器案例步骤(基本使用)-1. 状态Store里定义初始状态
     count = 0
@@ -12,6 +12,12 @@ class MobXCounter{
     addCount = () => {
         this.count++
     }
+
+    // Mobx计数器案例步骤(计算属性)-1.状态Store定义计算属性
+    get doubleCount(){
+        return this.count*2      
+    }
+
 }
 
 const mobxCounter = new MobXCounter()
