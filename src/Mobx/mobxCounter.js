@@ -1,25 +1,28 @@
-import { makeAutoObservable,computed } from 'mobx'
-class MobXCounter{
-    // Mobx计数器案例步骤(基本使用)-1. 状态Store里定义初始状态
-    count = 0
+import React from 'react'
 
-    // Mobx计数器案例步骤(基本使用)-2. 状态Store里实现当前类可观察
-    constructor(){
-        makeAutoObservable(this)
-    }
-
-    // Mobx计数器案例步骤(基本使用)-3.状态Store里定义修改方法
-    addCount = () => {
-        this.count++
-    }
-
-    // Mobx计数器案例步骤(计算属性)-1.状态Store定义计算属性
-    get doubleCount(){
-        return this.count*2      
-    }
-
+import counter from './counterStore'
+import task from './taskStore'
+import mobxChannel from './mobxChannel'
+// 模块化管理(基本使用)1-组合模块
+class MobXStore{
+    constructor() {        
+        // 计数器
+        this.counterStore = counter
+        // task
+        this.taskStore = task
+        // 异步
+        this.mobxChannel = mobxChannel
+      }
 }
 
-const mobxCounter = new MobXCounter()
-// 对外导出
-export default mobxCounter
+const mobxStore = new MobXStore()
+
+// 模块化管理(基本使用)2-利用React的context的机制导出统一的useStore方法，给业务组件使用
+
+// 生成状态树：context机制的数据查找链  Provider如果找不到 就找createContext方法执行时传入的参数
+const context = React.createContext(mobxStore)
+// 对外到处状态树
+const useMobXStore = () => React.useContext(context)
+// useStore() =>  rootStore  { counterStore, taskStore }
+
+export { useMobXStore }

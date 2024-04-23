@@ -6,6 +6,7 @@ import {
   LogoutOutlined,
   Html5Outlined,
   DeploymentUnitOutlined,
+  AlibabaOutlined
 } from "@ant-design/icons";
 import "./index.scss";
 import { Link, Outlet, useLocation } from "react-router-dom";
@@ -64,28 +65,37 @@ const GeekLayout = () => {
             style={{ height: "100%", borderRight: 0 }}
           >
             <Menu.Item icon={<HomeOutlined />} key="1">
-              <Link to="home">项目-数据概览</Link>
+              <Link to="home">博客项目-数据概览</Link>
             </Menu.Item>
             <Menu.Item icon={<DiffOutlined />} key="2">
-              <Link to="article">项目-内容管理</Link>
+              <Link to="article">博客项目-内容管理</Link>
             </Menu.Item>
             <Menu.Item icon={<EditOutlined />} key="3">
-              <Link to="publish"> 项目-发布文章</Link>
+              <Link to="publish">博客项目-发布文章</Link>
             </Menu.Item>
             <Menu.Item icon={<Html5Outlined />} key="4">
-              <Link to="basic"> HTML CSS-基础</Link>
+              <Link to="basic">HTML CSS-基础</Link>
             </Menu.Item>
             <Menu.Item icon={<Html5Outlined />} key="5">
-              <Link to="bilibili"> HTML CSS-仿写b站</Link>
+              <Link to="bilibili">HTML CSS-仿写b站</Link>
             </Menu.Item>
-            <Menu.Item icon={<DeploymentUnitOutlined />} key="6">
-            <Link to="mobx"> 状态管理-mobx练习</Link>
+            <Menu.Item icon={<Html5Outlined />} key="6">
+              <Link to="basic">JS-基础</Link>
             </Menu.Item>
             <Menu.Item icon={<DeploymentUnitOutlined />} key="7">
-              状态管理-redux练习
+            <Link to="mobx"> 状态管理-mobx练习</Link>
             </Menu.Item>
             <Menu.Item icon={<DeploymentUnitOutlined />} key="8">
+              状态管理-redux练习
+            </Menu.Item>
+            <Menu.Item icon={<DeploymentUnitOutlined />} key="9">
               状态管理-Zustand练习
+            </Menu.Item>
+            <Menu.Item icon={<AlibabaOutlined />} key="10">
+              React-Hooks练习
+            </Menu.Item>
+            <Menu.Item icon={<AlibabaOutlined />} key="11">
+              React-Router练习
             </Menu.Item>
           </Menu>
         </Sider>
